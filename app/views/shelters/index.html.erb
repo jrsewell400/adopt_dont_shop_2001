@@ -1,0 +1,7 @@
+<h1>Shelter Index Page</h1>
+
+<% @shelters.each do |shelter| %>
+  <section id="shelter-<%= shelter.id %>">
+    <h2><%= shelter.name %></h2>
+  </section>
+<% end %>
