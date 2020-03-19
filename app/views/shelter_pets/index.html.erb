@@ -1,0 +1,12 @@
+<h3><%= @shelter.name.upcase %> ADOPTABLE PETS INDEX PAGE<h3>
+
+<% @pets.each do |pet| %>
+  <% if pet.status == "Adoptable" && pet.shelter_id == @shelter.id %>
+    <section id="pet-<%= pet.id %>">
+      <%= image_tag(pet.image, size: "200x200") %></br>
+      <%= pet.name %></br>
+      <%= pet.age %></br>
+      <%= pet.sex %></br>
+    </section>
+  <% end %>
+<% end %>
