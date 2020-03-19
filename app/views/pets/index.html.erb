@@ -1,6 +1,6 @@
 <h3>PETS INDEX</h3>
 
-<%= @pets.each do |pet| %>
+<% @pets.each do |pet| %>
   <section id="pet-<%= pet.id %>">
     <%= image_tag(pet.image, size: "200x200") %></br>
     Name: <%= pet.name %></br>
