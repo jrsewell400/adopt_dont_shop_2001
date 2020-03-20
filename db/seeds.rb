@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Shelter.destroy_all
+Pet.destroy_all
+
 shelter_1 = Shelter.create(name: "Jordan's Shelter",
                            address: "123 Fake St.",
                            city: "Arvada", 
@@ -28,18 +31,29 @@ luna = Pet.create(name: "Luna",
                   sex: "Female",
                   status: "Adoptable",
                   image: "http://cdn.akc.org/content/article-body-image/norwegianelkhoundpuppy_dog_pictures.jpg",
+                  description: "Very good dog.",
                   shelter: shelter_1)
+
+rhombus = Pet.create(name: "Rhombus",
+                     age: "2",
+                     sex: "Male",
+                     status: "Adoptable",
+                     image: "http://cdn.akc.org/content/article-body-image/keeshond_dog_pictures_2.jpg",
+                     description: "Extremely good dog.",
+                     shelter: shelter_2)     
 
 nova = Pet.create(name: "Nova",
                   age: "10",
                   sex: "Female",
-                  status: "Adoptable",
+                  status: "Not Adoptable",
                   image: "http://cdn.akc.org/content/article-body-image/border_collie_dog_pictures_.jpg",
+                  description: "Amazingly good dog.",
                   shelter: shelter_1)
 
 roomba = Pet.create(name: "Roomba",
                     age: "7",
                     sex: "Male",
-                    status: "Not Adoptable",
+                    status: "Adoptable",
                     image: "http://cdn.akc.org/content/article-body-image/basset_hound_dog_pictures_.jpg",
+                    description: "Hilariously good dog.",
                     shelter: shelter_2)
