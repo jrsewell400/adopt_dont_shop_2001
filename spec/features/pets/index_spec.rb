@@ -43,7 +43,7 @@ RSpec.describe "As a visitor,", type: :feature do
         expect(page).to have_content(luna.name)
         expect(page).to have_content(luna.age)
         expect(page).to have_content(luna.sex)
-        expect(page).to have_content(luna.shelter.name)
+        expect(page).to have_link(luna.shelter.name)
       end
 
       within "#pet-#{nova.id}" do 
@@ -51,7 +51,7 @@ RSpec.describe "As a visitor,", type: :feature do
         expect(page).to have_content(nova.name)
         expect(page).to have_content(nova.age)
         expect(page).to have_content(nova.sex)
-        expect(page).to have_content(nova.shelter.name)
+        expect(page).to have_link(nova.shelter.name)
       end 
 
       within "#pet-#{roomba.id}" do 
@@ -59,8 +59,10 @@ RSpec.describe "As a visitor,", type: :feature do
         expect(page).to have_content(roomba.name)
         expect(page).to have_content(roomba.age)
         expect(page).to have_content(roomba.sex)
-        expect(page).to have_content(roomba.shelter.name)
+        expect(page).to have_link(roomba.shelter.name)
+        click_link(roomba.shelter.name)
       end
+      expect(current_path).to eq("/shelters/#{shelter_2.id}")
     end 
 
     it "then I see a link to Edit Pet with every pet that allows editing pet info." do 

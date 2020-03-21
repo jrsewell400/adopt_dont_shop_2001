@@ -63,11 +63,15 @@ RSpec.describe "As a visitor,", type: :feature do
         expect(page).to have_content(rhombus.age)
         expect(page).to have_content(rhombus.sex)
       end
-
+      
       expect(page).to have_content("#{shelter_1.name.upcase} ADOPTABLE PETS INDEX PAGE")
+      expect(page).to have_link(shelter_1.name.upcase)
       expect(page).to_not have_content(nova.name)
       expect(page).to_not have_content(roomba.name)
 
+      click_on(shelter_1.name.upcase)
+
+      expect(current_path).to eq("/shelters/#{shelter_1.id}")
     end 
   end 
 end
