@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #welcome
+  root 'welcome#index'
 
   #shelters
   get '/shelters', to: 'shelters#index'
