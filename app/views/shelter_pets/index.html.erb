@@ -1,4 +1,4 @@
-<h3><%= @shelter.name.upcase %> ADOPTABLE PETS INDEX PAGE<h3>
+<h3><%= link_to @shelter.name.upcase, "/shelters/#{@shelter.id}" %> ADOPTABLE PETS INDEX PAGE<h3>
 
 <% @shelter.pets.each do |pet| %>
   <% if pet.status == "Adoptable" %>
