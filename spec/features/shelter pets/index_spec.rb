@@ -50,24 +50,32 @@ RSpec.describe "As a visitor,", type: :feature do
 
       visit "/shelters/#{shelter_1.id}/pets"
       
+      expect(page).to have_content("#{shelter_1.name.upcase} ADOPTABLE PETS INDEX PAGE")
+      expect(page).to have_link(shelter_1.name.upcase)
+      expect(page).to_not have_content(nova.name)
+      expect(page).to_not have_content(roomba.name)
+      
       within "#pet-#{luna.id}" do
         expect(page).to have_css("img[src*='#{luna.image}']")
-        expect(page).to have_content(luna.name)
+        expect(page).to have_link(luna.name)
         expect(page).to have_content(luna.age)
         expect(page).to have_content(luna.sex)
+        expect(page).to have_content("Update Pet")
       end
 
       within "#pet-#{rhombus.id}" do
         expect(page).to have_css("img[src*='#{rhombus.image}']")
-        expect(page).to have_content(rhombus.name)
+        expect(page).to have_link(rhombus.name)
         expect(page).to have_content(rhombus.age)
         expect(page).to have_content(rhombus.sex)
+        expect(page).to have_content("Update Pet")
+        click_on(rhombus.name)
       end
-
-      expect(page).to have_content("#{shelter_1.name.upcase} ADOPTABLE PETS INDEX PAGE")
-      expect(page).to_not have_content(nova.name)
-      expect(page).to_not have_content(roomba.name)
-
+      expect(current_path).to eq("/pets/#{rhombus.id}")
+      
+      visit "/shelters/#{shelter_1.id}/pets"
+      click_on(shelter_1.name.upcase)
+      expect(current_path).to eq("/shelters/#{shelter_1.id}")
     end 
   end 
 end
