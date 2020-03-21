@@ -7,6 +7,7 @@
       <%= link_to pet.name, "/pets/#{pet.id}" %></br>
       <%= pet.age %></br>
       <%= pet.sex %></br></br>
+      <%= link_to "Update Pet", "/pets/#{pet.id}/edit" %>
     </section>
   <% end %>
 <% end %>

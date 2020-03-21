@@ -38,7 +38,6 @@ RSpec.describe "As a visitor", type: :feature do
         expect(page).to have_link("This Shelter's Pets Page")
         click_on("This Shelter's Pets Page")
       end
-      save_and_open_page
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
     end 
   end
