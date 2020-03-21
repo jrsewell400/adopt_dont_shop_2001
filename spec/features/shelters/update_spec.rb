@@ -43,6 +43,7 @@ RSpec.describe "As a visitor", type: :feature do
 
       click_on "Update Shelter"
 
+      expect(page).to have_link(shelter_1.name)
       fill_in :name, with: "Hilary's Shelter"
       fill_in :address, with: "432 Real St."
       fill_in :city, with: "Denver"

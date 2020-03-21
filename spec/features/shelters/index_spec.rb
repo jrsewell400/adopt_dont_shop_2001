@@ -24,16 +24,19 @@ RSpec.describe "As a visitor", type: :feature do
       visit '/shelters'
 
       within "#shelter-#{shelter_1.id}" do 
-        expect(page).to have_content(shelter_1.name)
+        expect(page).to have_link(shelter_1.name)
       end
 
       within "#shelter-#{shelter_2.id}" do 
-        expect(page).to have_content(shelter_2.name)
+        expect(page).to have_link(shelter_2.name)
       end 
 
       within "#shelter-#{shelter_3.id}" do 
-        expect(page).to have_content(shelter_3.name)
+        expect(page).to have_link(shelter_3.name)
+        click_on(shelter_3.name)
       end
+      
+      expect(current_path).to eq("/shelters/#{shelter_3.id}")
     end
     
     it "then I see a link to Edit Shelter info." do 
