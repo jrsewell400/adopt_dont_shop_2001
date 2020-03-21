@@ -60,6 +60,7 @@ RSpec.describe "As a visitor,", type: :feature do
         expect(page).to have_link(luna.name)
         expect(page).to have_content(luna.age)
         expect(page).to have_content(luna.sex)
+        expect(page).to have_content("Update Pet")
       end
 
       within "#pet-#{rhombus.id}" do
@@ -67,6 +68,7 @@ RSpec.describe "As a visitor,", type: :feature do
         expect(page).to have_link(rhombus.name)
         expect(page).to have_content(rhombus.age)
         expect(page).to have_content(rhombus.sex)
+        expect(page).to have_content("Update Pet")
         click_on(rhombus.name)
       end
       expect(current_path).to eq("/pets/#{rhombus.id}")
