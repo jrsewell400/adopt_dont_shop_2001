@@ -29,6 +29,7 @@ RSpec.describe "As a visitor,", type: :feature do
 
       click_on "Update Pet"
 
+      expect(page).to have_link(rhombus.name)
       fill_in :image, with: "http://cdn.akc.org/content/article-body-image/golden_retriever_puppy_sleeping_dog_pictures.jpg"
       fill_in :name, with: "Triangle"
       fill_in :description, with: "Acute dog!"

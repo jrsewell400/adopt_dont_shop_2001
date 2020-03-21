@@ -40,7 +40,7 @@ RSpec.describe "As a visitor,", type: :feature do
 
       within "#pet-#{luna.id}" do 
         expect(page).to have_css("img[src*='#{luna.image}']")
-        expect(page).to have_content(luna.name)
+        expect(page).to have_link(luna.name)
         expect(page).to have_content(luna.age)
         expect(page).to have_content(luna.sex)
         expect(page).to have_link(luna.shelter.name)
@@ -48,15 +48,20 @@ RSpec.describe "As a visitor,", type: :feature do
 
       within "#pet-#{nova.id}" do 
         expect(page).to have_css("img[src*='#{nova.image}']")
-        expect(page).to have_content(nova.name)
+        expect(page).to have_link(nova.name)
         expect(page).to have_content(nova.age)
         expect(page).to have_content(nova.sex)
         expect(page).to have_link(nova.shelter.name)
+        click_link(nova.name)
       end 
 
+      expect(current_path).to eq("/pets/#{nova.id}")
+
+      visit "/pets"
+      
       within "#pet-#{roomba.id}" do 
         expect(page).to have_css("img[src*='#{roomba.image}']")
-        expect(page).to have_content(roomba.name)
+        expect(page).to have_link(roomba.name)
         expect(page).to have_content(roomba.age)
         expect(page).to have_content(roomba.sex)
         expect(page).to have_link(roomba.shelter.name)
