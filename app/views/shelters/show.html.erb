@@ -7,5 +7,6 @@
   <%= @shelter.zip %></br></br>
 </section>
 
+<%= link_to "This Shelter's Pets Page", "/shelters/#{@shelter.id}/pets"%></br>
 <%= link_to "Update Shelter", "/shelters/#{@shelter.id}/edit"%></br>
 <%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", method: :delete %>
