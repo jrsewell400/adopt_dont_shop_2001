@@ -6,6 +6,7 @@
     Name: <%= pet.name %></br>
     Age: <%= pet.age %></br>
     Gender: <%= pet.sex %></br>
-    Belongs to: <%= pet.shelter.name %></br></br>
+    Belongs to: <%= pet.shelter.name %></br>
+    <%= link_to "Update Pet", "/pets/#{pet.id}/edit" %></br></br>
   </section>
 <% end %>
