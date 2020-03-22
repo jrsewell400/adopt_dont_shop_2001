@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20200319192408) do
     t.string "name"
     t.integer "age"
     t.string "sex"
-    t.string "status"
+    t.boolean "status", default: true
     t.string "image"
     t.bigint "shelter_id"
     t.string "description"
