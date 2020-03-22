@@ -9,10 +9,9 @@ RSpec.describe "As a visitor,", type: :feature do
                                  state: "CO",
                                  zip: 80003)
 
-      visit "/shelters/#{shelter_1.id}/pets/new"
+      visit "/shelters/#{shelter_1.id}/pets"
 
       click_on "Create Pet"
-
       fill_in :image, with: "http://cdn.akc.org/content/article-body-image/bull_terrier_puppy_dog_picture_.jpg"
       fill_in :name, with: "Bowser"
       fill_in :description, with: "13/10 good boy."
@@ -20,9 +19,10 @@ RSpec.describe "As a visitor,", type: :feature do
       fill_in :sex, with: "Male"
       click_on "Create Pet"
 
-      expect(page).to have_css?()
-      expect(page).to have_content()
-      
+      expect(page).to have_css("img[src*='http://cdn.akc.org/content/article-body-image/bull_terrier_puppy_dog_picture_.jpg']")
+      expect(page).to have_content("Bowser")
+      expect(page).to have_content("3")
+      expect(page).to have_content("Male")
     end 
   end 
 end
