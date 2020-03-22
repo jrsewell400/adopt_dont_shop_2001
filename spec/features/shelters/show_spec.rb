@@ -11,7 +11,7 @@ RSpec.describe "As a visitor", type: :feature do
 
       visit "/shelters/#{shelter_1.id}"
 
-      expect(page).to have_content(shelter_1.name)
+      expect(page).to have_content(shelter_1.name.upcase)
       within "#shelter-info" do
         expect(page).to have_content(shelter_1.address)
         expect(page).to have_content(shelter_1.city)
@@ -29,15 +29,15 @@ RSpec.describe "As a visitor", type: :feature do
 
       visit "/shelters/#{shelter_1.id}"
 
-      expect(page).to have_content(shelter_1.name)
+      expect(page).to have_content(shelter_1.name.upcase)
       within "#shelter-info" do
         expect(page).to have_content(shelter_1.address)
         expect(page).to have_content(shelter_1.city)
         expect(page).to have_content(shelter_1.state)
         expect(page).to have_content(shelter_1.zip)
-        expect(page).to have_link("This Shelter's Pets Page")
-        click_on("This Shelter's Pets Page")
       end
+      expect(page).to have_link("This Shelter's Pets Page")
+      click_on("This Shelter's Pets Page")
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
     end 
   end
