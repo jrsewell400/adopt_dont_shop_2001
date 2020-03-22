@@ -5,7 +5,8 @@
   Description: <%= @pet.description%></br>
   Age: <%= @pet.age%></br>
   Gender: <%= @pet.sex%></br>
-  Adoption Status: <%= @pet.status%>
+  Adoption Status: <%= @pet.adoptable? %>
+
 </section></br>
 
 <%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></br>
