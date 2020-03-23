@@ -80,7 +80,7 @@ RSpec.describe "As a visitor", type: :feature do
       fill_in :zip, with: 80201
       click_on "Submit"
 
-      expect(page).to have_content("Johil's Shelter")
+      expect(page).to have_content("JOHIL'S SHELTER")
       within '#shelter-info' do 
         expect(page).to have_content("432 Real St.")
         expect(page).to have_content("Denver")
