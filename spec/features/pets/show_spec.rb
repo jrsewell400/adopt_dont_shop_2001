@@ -24,8 +24,7 @@ RSpec.describe "As a visitor,", type: :feature do
       expect(page).to have_content("Description: #{luna.description}")
       expect(page).to have_content("Age: #{luna.age}")
       expect(page).to have_content("Gender: #{luna.sex}")
-      expect(page).to have_content("Adoption Status: #{luna.adoptable?}")
-      
+      expect(page).to have_content("Adoption Status: #{luna.status}")
     end
   end
 end

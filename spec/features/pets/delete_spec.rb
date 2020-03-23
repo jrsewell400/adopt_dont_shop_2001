@@ -28,7 +28,7 @@ RSpec.describe "As a visitor,", type: :feature do
       nova = Pet.create(name: "Nova",
                         age: "10",
                         sex: "Female",
-                        status: "Not Adoptable",
+                        status: "Pending Adoption",
                         image: "http://cdn.akc.org/content/article-body-image/border_collie_dog_pictures_.jpg",
                         description: "Amazingly good dog.",
                         shelter: shelter_1)

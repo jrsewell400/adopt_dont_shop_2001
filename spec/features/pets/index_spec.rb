@@ -18,21 +18,21 @@ RSpec.describe "As a visitor,", type: :feature do
       luna = Pet.create(name: "Luna",
                         age: "5",
                         sex: "Female",
-                        status: true,
+                        status: "Adoptable",
                         image: "http://cdn.akc.org/content/article-body-image/norwegianelkhoundpuppy_dog_pictures.jpg",
                         shelter: shelter_1)
 
       nova = Pet.create(name: "Nova",
                         age: "10",
                         sex: "Female",
-                        status: true,
+                        status: "Adoptable",
                         image: "http://cdn.akc.org/content/article-body-image/border_collie_dog_pictures_.jpg",
                         shelter: shelter_1)
 
       roomba = Pet.create(name: "Roomba",
                         age: "7",
                         sex: "Male",
-                        status: false,
+                        status: "Pending Adoption",
                         image: "http://cdn.akc.org/content/article-body-image/basset_hound_dog_pictures_.jpg",
                         shelter: shelter_2)
 
@@ -86,21 +86,21 @@ RSpec.describe "As a visitor,", type: :feature do
       luna = Pet.create(name: "Luna",
                         age: "5",
                         sex: "Female",
-                        status: true,
+                        status: "Adoptable",
                         image: "http://cdn.akc.org/content/article-body-image/norwegianelkhoundpuppy_dog_pictures.jpg",
                         shelter: shelter_1)
 
       nova = Pet.create(name: "Nova",
                         age: "10",
                         sex: "Female",
-                        status: true,
+                        status: "Adoptable",
                         image: "http://cdn.akc.org/content/article-body-image/border_collie_dog_pictures_.jpg",
                         shelter: shelter_1)
 
       roomba = Pet.create(name: "Roomba",
                         age: "7",
                         sex: "Male",
-                        status: "Not Adoptable",
+                        status: "Pending Adoption",
                         image: "http://cdn.akc.org/content/article-body-image/basset_hound_dog_pictures_.jpg",
                         shelter: shelter_2)
 
@@ -149,21 +149,21 @@ RSpec.describe "As a visitor,", type: :feature do
       luna = Pet.create(name: "Luna",
                         age: "5",
                         sex: "Female",
-                        status: true,
+                        status: "Adoptable",
                         image: "http://cdn.akc.org/content/article-body-image/norwegianelkhoundpuppy_dog_pictures.jpg",
                         shelter: shelter_1)
 
       nova = Pet.create(name: "Nova",
                         age: "10",
                         sex: "Female",
-                        status: true,
+                        status: "Adoptable",
                         image: "http://cdn.akc.org/content/article-body-image/border_collie_dog_pictures_.jpg",
                         shelter: shelter_1)
 
       roomba = Pet.create(name: "Roomba",
                           age: "7",
                           sex: "Male",
-                          status: false,
+                          status: "Pending Adoption",
                           image: "http://cdn.akc.org/content/article-body-image/basset_hound_dog_pictures_.jpg",
                           shelter: shelter_2)
 
