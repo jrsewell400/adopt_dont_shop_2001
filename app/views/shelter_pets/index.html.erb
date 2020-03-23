@@ -1,7 +1,7 @@
 <h3><%= link_to @shelter.name.upcase, "/shelters/#{@shelter.id}" %> ADOPTABLE PETS INDEX PAGE</h3>
 
 <% @shelter.pets.each do |pet| %>
-  <% if pet.status %>
+  <% if pet.status == "Adoptable" %>
     <section id="pet-<%= pet.id %>">
       <%= image_tag(pet.image, size: "200x200") %></br>
       <%= link_to pet.name, "/pets/#{pet.id}" %></br>
